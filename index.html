@@ -141,24 +141,47 @@
 
     .show { display: block; }
     
+    .faq-content {
+    width: 250px;
+    padding: 20px;
+    color: var(--text-main);
+    font-size: 13px;
+    background: #0d0e10;
+}
+.faq-content h3 { color: var(--accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo"> United Tactical forces <span>//</span> NST </div>
-        <nav>
-            <ul>
-                <li><a href="https://discord.gg/srrZ5u6Z8s" target="_blank">Discord</a></li>
-                <li><a href="https://steamcommunity.com/sharedfiles/filedetails?id=3565698994" target="_blank">Моды</a></li>
-                <li class="dropdown">
-    <a href="#" id="discord-btn">Онлайн</a>
-    <div class="dropdown-content" id="discord-widget">
-        <iframe src="https://discord.com/widget?id=1343257311350751253&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-    </div>
-</li>
-            </ul>
-        </nav>
+<nav>
+    <ul>
+        <li><a href="https://discord.gg/srrZ5u6Z8s" target="_blank">Discord</a></li>
+        <li><a href="https://steamcommunity.com/sharedfiles/filedetails?id=3565698994" target="_blank">Моды</a></li>
+        
+        <!-- Кнопка Онлайн -->
+        <li class="dropdown">
+            <a href="#" id="online-btn">Онлайн</a>
+            <div class="dropdown-content" id="online-widget">
+                <iframe src="https://discord.com/widget?id=1343257311350751253&theme=dark" width="300" height="400" frameborder="0"></iframe>
+            </div>
+        </li>
+
+        <!-- Кнопка FAQ -->
+        <li class="dropdown">
+            <a href="#" id="faq-btn">FAQ</a>
+            <div class="dropdown-content" id="faq-widget">
+                <div class="faq-content">
+                    <h3>INFO / FAQ</h3>
+                    <p><strong>Обязательна ли приписка в нике?</strong><br>По желанию, главное чтобы была на сервере UTF.</p>
+                    <p><strong>Как поставить приписку [NST]?</strong><br>На сервере UTF: профиль -> редактировать профиль сервера -> нажать на никнейм .</p>
+                    <p><strong>Обязательно ли заходить в Discord NST?</strong><br>Нет, но там много всякого.</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>
     </header>
 
     <main class="hero">
@@ -230,6 +253,33 @@
             if (discordWidget.classList.contains('show')) {
                 discordWidget.classList.remove('show');
             }
+        }
+    });
+</script>
+
+<script>
+    const onlineBtn = document.getElementById("online-btn");
+    const onlineWidget = document.getElementById("online-widget");
+    
+    onlineBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        onlineWidget.classList.toggle("show");
+        document.getElementById("faq-widget").classList.remove("show"); 
+    });
+
+    const faqBtn = document.getElementById("faq-btn");
+    const faqWidget = document.getElementById("faq-widget");
+
+    faqBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        faqWidget.classList.toggle("show");
+        document.getElementById("online-widget").classList.remove("show"); 
+    });
+
+    window.addEventListener("click", function(event) {
+        if (!event.target.matches('#online-btn') && !event.target.matches('#faq-btn')) {
+            onlineWidget.classList.remove('show');
+            faqWidget.classList.remove('show');
         }
     });
 </script>
