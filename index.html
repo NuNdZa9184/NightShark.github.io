@@ -75,6 +75,14 @@
         }
         
         footer { text-align: center; padding: 40px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border-color); font-family: 'Orbitron', sans-serif; }
+        .benefits { padding: 80px 40px; background: rgba(20, 21, 25, 0.5); border-top: 1px solid var(--border-color); }
+        .benefits-container { max-width: 1200px; margin: 0 auto; }
+        .benefits h2 { font-family: 'Orbitron', sans-serif; font-size: 32px; text-align: center; margin-bottom: 50px; color: #fff; text-transform: uppercase; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .benefit-card { background: rgba(255, 255, 255, 0.03); padding: 30px; border-left: 3px solid var(--accent); transition: 0.3s; }
+        .benefit-card:hover { background: rgba(140, 130, 90, 0.05); }
+        .benefit-card h3 { color: var(--accent); margin-bottom: 15px; font-family: 'Orbitron', sans-serif; font-size: 18px; }
+        .benefit-card p { color: var(--text-main); line-height: 1.6; font-size: 15px; }
     </style>
 </head>
 <body>
@@ -107,6 +115,25 @@
             <img src="picture/nstlogo.png" alt="Эмблема NST">
         </div>
     </main>
+<section class="benefits">
+        <div class="benefits-container">
+            <h2>Преимущества вступления</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>При вступлении</h3>
+                    <p>Вы получите опытный состав, отдельную роль в Discord, а также отточенные практические решения тактических ситуаций как на сервере UTF, так и на локальных сессиях[cite: 1].</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Наше сообщество</h3>
+                    <p>Мы — разношерстный коллектив, объединяющий профессиональных пилотов, танкистов и опытных Зевсов для реализации задач любой сложности[cite: 1].</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Этика и правила</h3>
+                    <p>Этика нашего отряда полностью дублирует правила поведения на проекте UTF, поэтому вам не придется держать в голове регламенты разных каналов[cite: 1].</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         &copy; 2026 NIGHT SHARK TEAM // TACTICAL FORCES
