@@ -126,6 +126,21 @@
         color: #000;
         box-shadow: 0 0 15px var(--accent-glow);
     }
+    .dropdown { position: relative; }
+
+    .dropdown-content {
+        display: none; 
+        position: absolute;
+        top: 45px; 
+        right: 0;
+        z-index: 1000;
+        background: #0d0e10;
+        border: 1px solid var(--accent);
+        padding: 5px;
+    }
+
+    .show { display: block; }
+    
     </style>
 </head>
 <body>
@@ -136,7 +151,12 @@
             <ul>
                 <li><a href="https://discord.gg/srrZ5u6Z8s" target="_blank">Discord</a></li>
                 <li><a href="https://steamcommunity.com/sharedfiles/filedetails?id=3565698994" target="_blank">Моды</a></li>
-                <li><a href="#">Тут должен быть виджет</a></li>
+                <li class="dropdown">
+    <a href="#" id="discord-btn">Онлайн</a>
+    <div class="dropdown-content" id="discord-widget">
+        <iframe src="https://discord.com/widget?id=1343257311350751253&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </div>
+</li>
             </ul>
         </nav>
     </header>
@@ -197,5 +217,21 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
+    <script>
+    const discordBtn = document.getElementById("discord-btn");
+    const discordWidget = document.getElementById("discord-widget");
+
+    discordBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        discordWidget.classList.toggle("show");
+    });
+    window.addEventListener("click", function(event) {
+        if (!event.target.matches('#discord-btn')) {
+            if (discordWidget.classList.contains('show')) {
+                discordWidget.classList.remove('show');
+            }
+        }
+    });
+</script>
 </body>
 </html>
