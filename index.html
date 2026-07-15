@@ -141,14 +141,35 @@
 
     .show { display: block; }
     
-    .faq-content {
-    width: 250px;
-    padding: 20px;
-    color: var(--text-main);
-    font-size: 13px;
+.faq-content {
+    width: 400px;
+    padding: 30px;
+    color: #e0e0e0;
+    font-size: 15px;
     background: #0d0e10;
+    line-height: 1.6;
 }
-.faq-content h3 { color: var(--accent); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; }
+.faq-content h3 { 
+    color: var(--accent); 
+    margin-bottom: 20px; 
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(140, 130, 90, 0.2);
+    padding-bottom: 15px;
+}
+
+.faq-item:last-child { border-bottom: none; }
+
+.faq-content strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+}
     </style>
 </head>
 <body>
@@ -159,8 +180,6 @@
     <ul>
         <li><a href="https://discord.gg/srrZ5u6Z8s" target="_blank">Discord</a></li>
         <li><a href="https://steamcommunity.com/sharedfiles/filedetails?id=3565698994" target="_blank">Моды</a></li>
-        
-        <!-- Кнопка Онлайн -->
         <li class="dropdown">
             <a href="#" id="online-btn">Онлайн</a>
             <div class="dropdown-content" id="online-widget">
@@ -168,18 +187,29 @@
             </div>
         </li>
 
-        <!-- Кнопка FAQ -->
-        <li class="dropdown">
-            <a href="#" id="faq-btn">FAQ</a>
-            <div class="dropdown-content" id="faq-widget">
-                <div class="faq-content">
-                    <h3>INFO / FAQ</h3>
-                    <p><strong>Обязательна ли приписка в нике?</strong><br>По желанию, главное чтобы была на сервере UTF.</p>
-                    <p><strong>Как поставить приписку [NST]?</strong><br>На сервере UTF: профиль -> редактировать профиль сервера -> нажать на никнейм .</p>
-                    <p><strong>Обязательно ли заходить в Discord NST?</strong><br>Нет, но там много всякого.</p>
-                </div>
+<li class="dropdown">
+    <a href="#" id="faq-btn">FAQ</a>
+    <div class="dropdown-content" id="faq-widget">
+        <div class="faq-content">
+            <h3>INFO / FAQ</h3>
+            
+            <div class="faq-item">
+                <strong>Обязательна ли приписка в нике?</strong>
+                По желанию, главное чтобы была на сервере UTF.
             </div>
-        </li>
+            
+            <div class="faq-item">
+                <strong>Как поставить приписку [NST]?</strong>
+                На сервере UTF: профиль -> редактировать профиль сервера -> нажать на никнейм.
+            </div>
+            
+            <div class="faq-item">
+                <strong>Обязательно ли заходить в Discord NST?</strong>
+                Нет, но там много всякого.
+            </div>
+        </div>
+    </div>
+</li>
     </ul>
 </nav>
     </header>
